@@ -100,7 +100,10 @@ public class Main {
 //        System.out.println(result);
 
         int nb=getTotalNumberOfLettersOfNamesLongerThanFive("med","med","1452","joujou");
-        System.out.println(nb);
+        //System.out.println(nb);
+
+
+        System.out.println(getString(Arrays.asList(3,44)));
 
     }
 
@@ -225,7 +228,21 @@ public class Main {
     * */
 
     public static String getString(List<Integer> list) {
-        return null;
+
+//        String result = list.stream()
+//                .map(e->{
+//                    if(e%2==0)
+//                        return "e"+e;
+//                    else
+//                        return "o"+e;
+//                })
+//                .collect(Collectors.joining(","));
+
+        String result = list.stream()
+                .map(e->e%2==0?"e"+e:"o"+e)
+                .collect(Collectors.joining(","));
+
+        return result;
     }
 
 }
