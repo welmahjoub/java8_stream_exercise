@@ -1,4 +1,4 @@
-package com.company.test2;
+package com.company;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,12 +28,12 @@ public class exercice1 {
 
 
         // 1 .Le premier programme doit retourner le prix TTC moyen de tous les produits
-        //linesStream.map(e->e.split(";")).map(e-> e[1]).map(Integer::valueOf).map(e->(e * 20)/100)
+        linesStream.map(e->e.split(";")).map(e-> e[1]).map(Integer::valueOf).map(e->(e * 20)/100);
 
-//        double d=linesStream.map(e->e.split(";")).mapToDouble(e-> Double.parseDouble(e[1])).map(e->e*1.2).average().getAsDouble();
-//        System.out.println(d);
+        double d=linesStream.map(e->e.split(";")).mapToDouble(e-> Double.parseDouble(e[1])).map(e->e*1.2).average().getAsDouble();
+        System.out.println(d);
 
-        //filter(e->e[1]==5.5 & )
+
         // q2 : Le second programme doit afficher la liste des produits taxés à 5,5% et qui coûtent moins de 100€ HT.
         linesStream.map(e->e.split(";")).
                 map(e-> new Object(){ double prix=Double.parseDouble(e[1]),tax=Double.parseDouble(e[2]);}).
